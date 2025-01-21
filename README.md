@@ -66,16 +66,16 @@ For example, given the query `biz +foo +bar +(bat baz) bop`:
 5. Lines with no optional terms but both OR terms
 6. Lines with no optional terms and one OR term
 
-Running the query `biz +foo +bar +(bat baz) bop` on the test_folder directory will return the following results:
+Running the query `biz +foo +bar +(bat baz) bop` on the test_folder directory will return the following results in the following order:
 
-| File | Line | Content |
-|------|------|---------|
-| tests/test_folder/test1.txt | 2 | `1: biz foo bar bat baz bop biz` |
-| tests/test_folder/test1.txt | 1 | `2: biz foo bar bat baz bop` |
-| tests/test.txt | 1 | `3: foo bar bat baz bop` |
-| tests/sample1.txt | 1 | `4: foo bar bat baz` |
-| tests/test_folder/test1.txt | 4 | `5: foo bar bat` |
-| tests/test.txt | 2 | `5: foo bar baz` |
+| File | Content |
+|------|---------|
+| tests/test_folder/test1.txt | `1: biz foo bar bat baz bop biz` |
+| tests/test_folder/test1.txt | `2: biz foo bar bat baz bop` |
+| tests/test.txt | `3: foo bar bat baz bop` |
+| tests/sample1.txt | `4: foo bar bat baz` |
+| tests/test_folder/test1.txt | `5: foo bar bat` |
+| tests/test.txt | `5: foo bar baz` |
 
 ## Implementation Details
 
