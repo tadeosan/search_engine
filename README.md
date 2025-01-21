@@ -6,7 +6,7 @@ A pure Python implementation of an in-memory search engine for text files in a d
 
 - Fast in-memory search
 - Recursive directory scanning
-- Support for multiple text file formats (.txt, .md, .py, .java, .cpp, .c, .h, .js, .html, .css)
+- Support for multiple text file formats (.txt, .md, .py, .java, .cpp, .c, .h, .js, .html, .css) (only .txt tested)
 - Advanced query syntax with required and optional terms
 - OR group support with multi-match ranking
 - Smart result ranking based on both optional terms and OR group matches
@@ -68,12 +68,14 @@ For example, given the query `biz +foo +bar +(bat baz) bop`:
 
 Running the query `biz +foo +bar +(bat baz) bop` on the test_folder directory will return the following results:
 
-tests/test_folder/test1.txt 2 "1: biz foo bar bat baz bop biz"
-tests/test_folder/test1.txt 1 "2: biz foo bar bat baz bop"
-tests/test.txt 1 "3: foo bar bat baz bop"
-tests/sample1.txt 1 "4: foo bar bat baz"
-tests/test_folder/test1.txt 4 "5: foo bar bat"
-tests/test.txt 2 "5: foo bar baz"
+| File | Line | Content |
+|------|------|---------|
+| tests/test_folder/test1.txt | 2 | `1: biz foo bar bat baz bop biz` |
+| tests/test_folder/test1.txt | 1 | `2: biz foo bar bat baz bop` |
+| tests/test.txt | 1 | `3: foo bar bat baz bop` |
+| tests/sample1.txt | 1 | `4: foo bar bat baz` |
+| tests/test_folder/test1.txt | 4 | `5: foo bar bat` |
+| tests/test.txt | 2 | `5: foo bar baz` |
 
 ## Implementation Details
 
