@@ -1,0 +1,5 @@
+3: foo bar bat baz bop
+5: foo bar baz
+
+This line should not appear: foo
+this line should not appear: biz foo bar bop

@@ -1,0 +1,3 @@
+4: foo bar bat baz
+
+This line should not appear bar
